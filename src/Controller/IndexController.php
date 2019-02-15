@@ -22,11 +22,11 @@ class IndexController extends AbstractController
         $convertFrom = $this->createFormBuilder()
             ->add('file', FileType::class, [
                 'label' => 'Upload a .csv file',
-                'constraints' => new File(['mimeTypes' => ['application/pdf']])
+                'constraints' => new File(['mimeTypes' => ['text/csv']])
             ])
-            ->add('file', FileType::class, [
+            ->add('file2', FileType::class, [
                 'label' => 'Upload a .xlsx file',
-                'constraints' => new File(['mimeTypes' => ['application/pdf']])
+                'constraints' => new File(['mimeTypes' => ['application/vnd.openxmlformats-officedocument.spreadsheetml.sheet']])
             ])
             ->add('convert', SubmitType::class)
             ->getForm();
