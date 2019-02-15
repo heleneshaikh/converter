@@ -4,6 +4,11 @@
         <meta charset="UTF-8">
         <title>{% block title %}Welcome!{% endblock %}</title>
         {% block stylesheets %}{% endblock %}
+        {% block javascript %}
+            {% for js in encore_entry_js_files('js/upload-validation') %}
+                <script src="{{ asset(js) }}" async></script>
+            {% endfor %}
+        {% endblock %}
     </head>
     <body>
         {{ form(convertForm) }}
