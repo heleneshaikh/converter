@@ -2,6 +2,10 @@
     display: flex;
     justify-content: space-around;
 
+    @media (--small) {
+        flex-direction: column;
+    }
+
     > div:last-of-type {
         display: none;
     }

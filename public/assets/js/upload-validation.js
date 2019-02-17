@@ -13,8 +13,9 @@ const validation = function validateUpload(mimeType) {
                 '<span class="form-error">' + type.substring(type.indexOf("/") + 1)
                 + ' is not allowed. Please upload ' + mimeType.substring(mimeType.indexOf("/") + 1) + ' only </span>');
         } else {
-            // document.querySelector('span.form-error').classList.remove();
             uploadForm.submit();
+            this.value = '';
+            document.querySelector('.animation-wrapper').classList.add('js-completed');
         }
     }
 };

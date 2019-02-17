@@ -5,4 +5,8 @@
     max-width: 800px;
     text-align: center;
     margin: 0 auto;
+
+    @media (--small) {
+        padding: 7rem 2rem;
+    }
 }

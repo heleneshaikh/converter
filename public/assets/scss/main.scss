@@ -1,11 +1,12 @@
 @import "utils/variables";
 @import "utils/grid";
+@import "utils/media-queries";
 @import "components/header";
 @import "components/footer";
 @import "components/button";
 @import "components/form";
 @import "components/box";
-@import "components/list";
+@import "animations";
 
 @font-face {
     font-family: 'Montserrat';
@@ -42,4 +43,9 @@ main {
 .intro {
     margin-top: 7rem;
     margin-bottom: 7rem;
+
+    @media (--small) {
+        margin-top: 4rem;
+        margin-bottom: 4rem;
+    }
 }

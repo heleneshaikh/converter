@@ -31,6 +31,7 @@ class IndexController extends AbstractController
 
             if ($file) {
                 $convertedFile = $converter->convertFile($file);
+                //unlink
 
                 return $this->file($convertedFile);
             }

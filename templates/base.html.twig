@@ -38,15 +38,17 @@
     <div class="container">
         <div class="navigation-wrapper">
             <a href="{{ path('index') }}"><img src="{{ asset('../assets/images/icons/logo.svg') }}"></a>
-            <nav>
-                <ul class="navigation-list">
-                    <li class="navigation-list__item">
+            <nav class="navigation">
+                <ul class="navigation__list">
+                    <li class="navigation__item">
                         <a href="https://en.wikipedia.org/wiki/Comma-separated_values" target="_blank"
-                           rel="noopener noreferrer" class="navigation-list__link">About csv</a></li>
-                    <li class="navigation-list__item"><a href="https://en.wikipedia.org/wiki/Office_Open_XML" target="_blank"
-                           rel="noopener noreferrer" class="navigation-list__link">About xlsx</a></li>
-                    <li class="navigation-list__item"><a href="https://phpspreadsheet.readthedocs.io/en/develop/" target="_blank"
-                           rel="noopener noreferrer" class="navigation-list__link">Library</a></li>
+                           rel="noopener noreferrer" class="navigation__link">About csv</a></li>
+                    <li class="navigation__item"><a href="https://en.wikipedia.org/wiki/Office_Open_XML" target="_blank"
+                                                    rel="noopener noreferrer" class="navigation__link">About xlsx</a>
+                    </li>
+                    <li class="navigation__item"><a href="https://phpspreadsheet.readthedocs.io/en/develop/"
+                                                    target="_blank"
+                                                    rel="noopener noreferrer" class="navigation__link">Library</a></li>
                 </ul>
             </nav>
         </div>
@@ -67,11 +69,20 @@
                 {{ form_row(convertForm.xlsx) }}
             </div>
             {{ form_end(convertForm) }}
+            <div class="animation-wrapper">
+                <svg version="1.1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 130.2 130.2">
+                    <circle class="path circle" fill="none" stroke="#73AF55" stroke-width="6" stroke-miterlimit="10"
+                            cx="65.1" cy="65.1" r="62.1"/>
+                    <polyline class="path check" fill="none" stroke="#73AF55" stroke-width="6" stroke-linecap="round"
+                              stroke-miterlimit="10" points="100.2,40.2 51.5,88.8 29.8,67.5 "/>
+                </svg>
+                <p class="success">File converted!</p>
+            </div>
         </div>
     </div>
 </main>
 <footer class="container">
-    <small class="copyright"> &copy; {{ 'now' | date('Y') }} Ultricies Lorem Inceptos </small>
+    <small class="copyright"> &copy; {{ 'now' | date('Y') }} Ultricies Lorem Inceptos</small>
 </footer>
 </body>
 </html>

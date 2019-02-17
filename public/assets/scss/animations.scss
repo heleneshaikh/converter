@@ -1,0 +1,55 @@
+.animation-wrapper {
+    &:not([class="js-completed"]) {
+        display: none;
+    }
+
+    &.js-completed {
+        display: block;
+
+        > svg {
+            width: 100px;
+            display: block;
+            margin: 40px auto 0;
+        }
+    }
+}
+
+.path {
+    stroke-dasharray: 1000;
+    stroke-dashoffset: 0;
+
+    &.circle {
+        animation: dash .9s ease-in-out;
+    }
+
+    &.check {
+        stroke-dashoffset: -100;
+        animation: dash-check .9s .35s ease-in-out forwards;
+    }
+}
+
+p {
+    text-align: center;
+
+    &.success {
+        color: #73AF55;
+    }
+}
+
+@-webkit-keyframes dash-check {
+    0% {
+        stroke-dashoffset: -100;
+    }
+    100% {
+        stroke-dashoffset: 900;
+    }
+}
+
+@keyframes dash-check {
+    0% {
+        stroke-dashoffset: -100;
+    }
+    100% {
+        stroke-dashoffset: 900;
+    }
+}
