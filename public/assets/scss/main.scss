@@ -1,8 +1,11 @@
 @import "utils/variables";
 @import "utils/grid";
+@import "components/header";
+@import "components/footer";
 @import "components/button";
 @import "components/form";
 @import "components/box";
+@import "components/list";
 
 @font-face {
     font-family: 'Montserrat';
@@ -21,8 +24,21 @@ html {
 body {
     font-size: var(--font-size-regular);
     font-family: var(--main-font);
+    margin: 0;
+    display: flex;
+    min-height: 100vh;
+    flex-direction: column;
+}
+
+main {
+    flex: 1;
 }
 
 .content {
     text-align: center;
+}
+
+.intro {
+    margin-top: 7rem;
+    margin-bottom: 7rem;
 }

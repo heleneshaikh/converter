@@ -19,14 +19,14 @@ class UploadType extends AbstractType
 
         $builder
             ->add('csv', FileType::class, [
-                'label' => 'Upload a csv file',
+                'label' => 'csv to xlsx',
                 'required' => false,
                 'attr' => ['class' => 'button__input--csv', 'accept' => '.csv, text/csv'],
                 'label_attr' => ['class' => 'button__label']
 //                'constraints' => new File(['mimeTypes' => ['text/csv']])
             ])
             ->add('xlsx', FileType::class, [
-                'label' => 'Upload a xlsx file',
+                'label' => 'xlsx to csv',
                 'required' => false,
                 'attr' => ['class' => 'button__input--xlsx', 'accept' => '.xlsx,' . $xlsxMime . '\''],
                 'label_attr' => ['class' => 'button__label'],

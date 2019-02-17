@@ -1,0 +1,33 @@
+.navigation-list {
+    list-style-type: none;
+    display: flex;
+    font-size: var(--font-size-small);
+
+    &__item {
+        display: inline-block;
+        flex-grow: 1;
+        text-align: center;
+    }
+
+    &__link {
+        color: var(--white);
+        text-decoration: none;
+        display: inline-block;
+        padding-bottom: .5rem;
+        position: relative;
+
+        &::after {
+            width: 0;
+            content: "";
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            border-bottom: 2px solid var(--white);
+            transition: .3s;
+        }
+
+        &:--hocus::after {
+            width: 100%;
+        }
+    }
+}

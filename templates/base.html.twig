@@ -34,11 +34,30 @@
 {% endblock %}
 </head>
 <body>
-<header></header>
+<header class="header">
+    <div class="container">
+        <div class="navigation-wrapper">
+            <a href="{{ path('index') }}"><img src="{{ asset('../assets/images/icons/logo.svg') }}"></a>
+            <nav>
+                <ul class="navigation-list">
+                    <li class="navigation-list__item">
+                        <a href="https://en.wikipedia.org/wiki/Comma-separated_values" target="_blank"
+                           rel="noopener noreferrer" class="navigation-list__link">About csv</a></li>
+                    <li class="navigation-list__item"><a href="https://en.wikipedia.org/wiki/Office_Open_XML" target="_blank"
+                           rel="noopener noreferrer" class="navigation-list__link">About xlsx</a></li>
+                    <li class="navigation-list__item"><a href="https://phpspreadsheet.readthedocs.io/en/develop/" target="_blank"
+                           rel="noopener noreferrer" class="navigation-list__link">Library</a></li>
+                </ul>
+            </nav>
+        </div>
+    </div>
+</header>
 <main class="content">
     <div class="container">
-        <h1 class="title-1">File Converter</h1>
-        <p>Convert your xlsx and csv files in one click! </p>
+        <div class="intro">
+            <h1 class="title-1">Converter</h1>
+            <p>Convert your xlsx and csv files in one click! </p>
+        </div>
         <div class="box">
             {{ form_start(convertForm, {attr: {class: 'form'}}) }}
             <div class="button">
@@ -52,7 +71,7 @@
     </div>
 </main>
 <footer class="container">
-    <small>{{ 'now' | date('Y') }} &copy; copyright</small>
+    <small class="copyright"> &copy; {{ 'now' | date('Y') }} Ultricies Lorem Inceptos </small>
 </footer>
 </body>
 </html>

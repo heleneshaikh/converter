@@ -1,0 +1,15 @@
+.header {
+    background-color: var(--color-primary);
+    padding-top: 3rem;
+    padding-bottom: 3rem;
+}
+
+.navigation-wrapper {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    > nav {
+        flex-basis: 40%;
+    }
+}
