@@ -18,12 +18,14 @@ class UploadType extends AbstractType
         $builder
             ->add('csv', FileType::class, [
                 'label' => 'Upload a .csv file',
-                'required' => false
+                'required' => false,
+                'attr' => ['class' => 'upload-csv']
 //                'constraints' => new File(['mimeTypes' => ['text/csv']])
             ])
             ->add('xlsx', FileType::class, [
                 'label' => 'Upload a .xlsx file',
                 'required' => false,
+                'attr' => ['class' => 'upload-xslx'],
                 'constraints' => new File(['mimeTypes' => ['application/vnd.openxmlformats-officedocument.spreadsheetml.sheet']])
             ])
             ->add('convert', SubmitType::class);

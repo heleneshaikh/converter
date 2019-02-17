@@ -3,14 +3,16 @@
 <head>
     <meta charset="UTF-8">
     <title>{% block title %}Welcome!{% endblock %}</title>
-    {% block stylesheets %}{% endblock %}
+    {% block stylesheets %}
+        {{ encore_entry_link_tags('css/main') }}
+    {% endblock %}
     {% block javascript %}
-    {% for js in encore_entry_js_files('js/upload-validation') %}
-        <script src="{{ asset(js) }}" async></script>
+    {% for upload_validation in encore_entry_js_files('js/upload-validation') %}
+        <script src="{{ asset(upload_validation) }}" async></script>
     {% endfor %}
 {% endblock %}
 </head>
 <body>
-    {{ form(convertForm) }}
+{{ form(convertForm) }}
 </body>
 </html>

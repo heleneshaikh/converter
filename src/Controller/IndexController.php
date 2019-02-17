@@ -28,7 +28,6 @@ class IndexController extends AbstractController
 
             /** @var UploadedFile $file */
             $file = $data['csv'] ?? $data['xlsx'];
-            $convertedFile = null;
 
             if ($file) {
                 $convertedFile = $converter->convertFile($file);
