@@ -1,0 +1,40 @@
+.button-submit {
+    display: none;
+}
+
+.button {
+    display: inline-block;
+    flex-basis: 40%;
+
+    &__input {
+        width: 0.1px;
+        height: 0.1px;
+        opacity: 0;
+        overflow: hidden;
+        position: absolute;
+        z-index: -1;
+
+        &--csv {
+            @extend .button__input;
+        }
+
+        &--xlsx {
+            @extend  .button__input;
+        }
+    }
+
+    &__label {
+        color: var(--white);
+        text-overflow: ellipsis;
+        white-space: nowrap;
+        cursor: pointer;
+        padding: 1.5rem 3rem 1.5rem 5rem;
+        overflow: hidden;
+        background: var(--color-primary) url("../../images/icons/upload.svg") no-repeat left 1.5rem center;
+        display: inline-block;
+
+        &:--hocus {
+            background-color: var(--color-primary-light);
+        }
+    }
+}

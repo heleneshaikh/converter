@@ -1,0 +1,10 @@
+.container {
+    padding: 0 30px;
+    position: relative;
+    max-width: 1500px;
+    margin: 0 auto;
+
+    @media (--small) {
+        padding: 0 15px;
+    }
+}

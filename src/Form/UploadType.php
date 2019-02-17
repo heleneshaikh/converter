@@ -17,17 +17,22 @@ class UploadType extends AbstractType
     {
         $builder
             ->add('csv', FileType::class, [
-                'label' => 'Upload a .csv file',
+                'label' => 'Upload a csv file',
                 'required' => false,
-                'attr' => ['class' => 'upload-csv']
+                'attr' => ['class' => 'button__input--csv'],
+                'label_attr' => ['class' => 'button__label']
 //                'constraints' => new File(['mimeTypes' => ['text/csv']])
             ])
             ->add('xlsx', FileType::class, [
-                'label' => 'Upload a .xlsx file',
+                'label' => 'Upload a xlsx file',
                 'required' => false,
-                'attr' => ['class' => 'upload-xslx'],
+                'attr' => ['class' => 'button__input--xlsx'],
+                'label_attr' => ['class' => 'button__label'],
                 'constraints' => new File(['mimeTypes' => ['application/vnd.openxmlformats-officedocument.spreadsheetml.sheet']])
             ])
-            ->add('convert', SubmitType::class);
+            ->add('convert', SubmitType::class, [
+                'label' => false,
+                'attr' => ['class' => 'button-submit'],
+            ]);
     }
 }

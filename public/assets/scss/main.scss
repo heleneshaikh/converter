@@ -1,2 +1,28 @@
 @import "utils/variables";
+@import "utils/grid";
+@import "components/button";
 @import "components/form";
+@import "components/box";
+
+@font-face {
+    font-family: 'Montserrat';
+    font-display: optional;
+    unicode-range: U+000-5FF;
+}
+
+html {
+    font-size: 62.5%;
+}
+
+* {
+    box-sizing: border-box;
+}
+
+body {
+    font-size: var(--font-size-regular);
+    font-family: var(--main-font);
+}
+
+.content {
+    text-align: center;
+}

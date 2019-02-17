@@ -1,3 +1,13 @@
-.form-error {
-    color: var(--red);
+.form {
+    display: flex;
+    justify-content: space-around;
+
+    > div:last-of-type {
+        display: none;
+    }
+
+    &-error {
+        color: var(--red);
+        font-size: var(--font-size-small);
+    }
 }
