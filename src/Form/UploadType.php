@@ -15,20 +15,22 @@ class UploadType extends AbstractType
      */
     public function buildForm(FormBuilderInterface $builder, array $options): void
     {
+        $xlsxMime = 'application/vnd.openxmlformats-officedocument.spreadsheetml.sheet';
+
         $builder
             ->add('csv', FileType::class, [
                 'label' => 'Upload a csv file',
                 'required' => false,
-                'attr' => ['class' => 'button__input--csv'],
+                'attr' => ['class' => 'button__input--csv', 'accept' => '.csv, text/csv'],
                 'label_attr' => ['class' => 'button__label']
 //                'constraints' => new File(['mimeTypes' => ['text/csv']])
             ])
             ->add('xlsx', FileType::class, [
                 'label' => 'Upload a xlsx file',
                 'required' => false,
-                'attr' => ['class' => 'button__input--xlsx'],
+                'attr' => ['class' => 'button__input--xlsx', 'accept' => '.xlsx,' . $xlsxMime . '\''],
                 'label_attr' => ['class' => 'button__label'],
-                'constraints' => new File(['mimeTypes' => ['application/vnd.openxmlformats-officedocument.spreadsheetml.sheet']])
+                'constraints' => new File(['mimeTypes' => [$xlsxMime]])
             ])
             ->add('convert', SubmitType::class, [
                 'label' => false,
