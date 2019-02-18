@@ -39,6 +39,8 @@ class ConversionService
             case 'xlsx':
                 return $this->convertXlsToCsv($fileName);
         }
+        
+        return null;
     }
 
     /**
