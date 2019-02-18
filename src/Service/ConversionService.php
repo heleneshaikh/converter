@@ -5,7 +5,7 @@ namespace App\Service;
 use PhpOffice\PhpSpreadsheet\Reader\Exception as ReaderException;
 use PhpOffice\PhpSpreadsheet\Writer\Exception as WriterException;
 use PhpOffice\PhpSpreadsheet\Reader\Xlsx as XlsxReader;
-use \PhpOffice\PhpSpreadsheet\Writer\Xlsx as XlsxWriter;
+use PhpOffice\PhpSpreadsheet\Writer\Xlsx as XlsxWriter;
 use PhpOffice\PhpSpreadsheet\Reader\Csv as CsvReader;
 use PhpOffice\PhpSpreadsheet\Writer\Csv as CsvWriter;
 use Symfony\Component\HttpFoundation\File\UploadedFile;
@@ -39,6 +39,8 @@ class ConversionService
             case 'xlsx':
                 return $this->convertXlsToCsv($fileName);
         }
+
+        return null;
     }
 
     /**
