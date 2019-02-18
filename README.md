@@ -1,10 +1,12 @@
 # Converter
 This is a Symfony 4 project for my job application at Inventis.
 
-## Setup
-Use `php bin/console server:run` to run the Symfony server.
+## Run the project with these 2 commands
+`composer install` to install the dependencies.
 
-The project uses Webpack Encore:
+`php bin/console server:run` to run the Symfony server.
+
+###Modify assets:
 
 `yarn watch` to enable file watching
 
