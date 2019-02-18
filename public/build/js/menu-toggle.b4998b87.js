@@ -1,0 +1,1 @@
+(window.webpackJsonp=window.webpackJsonp||[]).push([[2],{"+DkC":function(e,n){var o=document.querySelector(".menu-icon"),t=document.querySelector(".navigation"),c=document.querySelector(".navigation-wrapper"),i=[o,t,document.querySelector(".navigation__list"),c];o.addEventListener("click",function(){i.forEach(function(e){return e.classList.toggle("open")})})}},[["+DkC",0]]]);

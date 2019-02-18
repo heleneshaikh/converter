@@ -1,0 +1,30 @@
+{
+  "entrypoints": {
+    "js/upload-validation": {
+      "js": [
+        "build/runtime.d41d8cd9.js",
+        "build/js/upload-validation.59ce4021.js"
+      ]
+    },
+    "js/preload": {
+      "js": [
+        "build/runtime.d41d8cd9.js",
+        "build/js/preload.2d0f5e5e.js"
+      ]
+    },
+    "js/menu-toggle": {
+      "js": [
+        "build/runtime.d41d8cd9.js",
+        "build/js/menu-toggle.b4998b87.js"
+      ]
+    },
+    "css/main": {
+      "js": [
+        "build/runtime.d41d8cd9.js"
+      ],
+      "css": [
+        "build/css/main.ed3a4f13.css"
+      ]
+    }
+  }
+}
