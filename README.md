@@ -9,7 +9,7 @@ with only these 2 commands:
 
 `php bin/console server:run` to run the Symfony server.
 
-###Modify assets:
+### Modify assets:
 
 `yarn watch` to enable file watching
 
