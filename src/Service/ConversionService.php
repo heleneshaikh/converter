@@ -30,7 +30,7 @@ class ConversionService
      */
     public function convertFile(UploadedFile $file): ?string
     {
-        $fileName = pathinfo($file->getClientOriginalName(), PATHINFO_FILENAME). '.' . $file->guessExtension();
+        $fileName = pathinfo($file->getClientOriginalName(), PATHINFO_FILENAME) . '.' . $file->guessExtension();
         $file->move($this->fileUploadPath, $fileName);
 
         switch ($file->guessClientExtension()) {
@@ -57,7 +57,10 @@ class ConversionService
 
             return $convertedFileName;
         } catch (ReaderException | WriterException $e) {
+            echo 'Unable to convert file due to ' . $e->getMessage();
         }
+
+        return $fileName;
     }
 
     /**
@@ -76,6 +79,9 @@ class ConversionService
 
             return $convertedFileName;
         } catch (ReaderException | WriterException$e) {
+            echo 'Unable to convert file due to ' . $e->getMessage();
         }
+
+        return $fileName;
     }
 }

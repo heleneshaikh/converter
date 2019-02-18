@@ -5,6 +5,7 @@ namespace App\Controller;
 use App\Form\UploadType;
 use App\Service\ConversionService;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
+use Symfony\Component\Filesystem\Filesystem;
 use Symfony\Component\HttpFoundation\File\UploadedFile;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
@@ -20,8 +21,12 @@ class IndexController extends AbstractController
      */
     public function index(Request $request, ConversionService $converter): Response
     {
+        $fileSystem = new Filesystem();
+        $fileSystem->remove($this->getParameter('file_uploads_directory'));
+
         $convertFrom = $this->createForm(UploadType::class);
         $convertFrom->handleRequest($request);
+        $convertedFile = null;
 
         if ($convertFrom->isSubmitted() && $convertFrom->isValid()) {
             $data = $convertFrom->getData();
@@ -31,8 +36,8 @@ class IndexController extends AbstractController
 
             if ($file) {
                 $convertedFile = $converter->convertFile($file);
-                //unlink
-
+//                $response = new BinaryFileResponse($convertedFile);
+//                $response->deleteFileAfterSend(true);
                 return $this->file($convertedFile);
             }
         }

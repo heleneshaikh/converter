@@ -20,5 +20,11 @@ const validation = function validateUpload(mimeType) {
     }
 };
 
+function resetAnimation () {
+    document.querySelector('.animation-wrapper').classList.remove('js-completed')
+}
+
+xlsxUpload.addEventListener('click',  () => resetAnimation());
+csvUpload.addEventListener('click',  () => resetAnimation());
 xlsxUpload.addEventListener('input', validation(xlsxMime));
 csvUpload.addEventListener('input', validation(csvMime));

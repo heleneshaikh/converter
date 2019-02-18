@@ -18,8 +18,11 @@
         <noscript>
             <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Montserrat:500,600">
         </noscript>
-        {% for js in encore_entry_js_files('js/preload') %}
-        <script src="{{ asset(js) }}" async defer></script>
+        {% for preload in encore_entry_js_files('js/preload') %}
+        <script src="{{ asset(preload) }}" async defer></script>
+        {% endfor %}
+        {% for menu_toggle in encore_entry_js_files('js/menu-toggle') %}
+        <script src="{{ asset(menu_toggle) }}" async defer></script>
         {% endfor %}
         {{ encore_entry_link_tags('css/main') }}
     {% endblock %}
@@ -37,20 +40,32 @@
 <header class="header">
     <div class="container">
         <div class="navigation-wrapper">
-            <a href="{{ path('index') }}"><img src="{{ asset('../assets/images/icons/logo.svg') }}"></a>
-            <nav class="navigation">
-                <ul class="navigation__list">
-                    <li class="navigation__item">
-                        <a href="https://en.wikipedia.org/wiki/Comma-separated_values" target="_blank"
-                           rel="noopener noreferrer" class="navigation__link">About csv</a></li>
-                    <li class="navigation__item"><a href="https://en.wikipedia.org/wiki/Office_Open_XML" target="_blank"
-                                                    rel="noopener noreferrer" class="navigation__link">About xlsx</a>
-                    </li>
-                    <li class="navigation__item"><a href="https://phpspreadsheet.readthedocs.io/en/develop/"
-                                                    target="_blank"
-                                                    rel="noopener noreferrer" class="navigation__link">Library</a></li>
-                </ul>
-            </nav>
+            <div class="navigation">
+                <a href="{{ path('index') }}"><img class="navigation__logo"
+                                                   src="{{ asset('../assets/images/icons/logo.svg') }}"></a>
+                <nav>
+                    <ul class="navigation__list">
+                        <li class="navigation__item">
+                            <a href="https://en.wikipedia.org/wiki/Comma-separated_values" target="_blank"
+                               rel="noopener noreferrer" class="navigation__link">About csv</a></li>
+                        <li class="navigation__item"><a href="https://en.wikipedia.org/wiki/Office_Open_XML"
+                                                        target="_blank"
+                                                        rel="noopener noreferrer" class="navigation__link">About
+                                xlsx</a>
+                        </li>
+                        <li class="navigation__item"><a href="https://phpspreadsheet.readthedocs.io/en/develop/"
+                                                        target="_blank"
+                                                        rel="noopener noreferrer" class="navigation__link">Library</a>
+                        </li>
+                    </ul>
+                </nav>
+            </div>
+            <div class="menu-icon">
+                <span></span>
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
         </div>
     </div>
 </header>
