@@ -30,7 +30,7 @@ class ConversionService
      */
     public function convertFile(UploadedFile $file): ?string
     {
-        $fileName = pathinfo($file->getClientOriginalName(), PATHINFO_FILENAME) . '.' . $file->guessExtension();
+        $fileName = pathinfo($file->getClientOriginalName(), PATHINFO_FILENAME) . '.' . $file->guessClientExtension();
         $file->move($this->fileUploadPath, $fileName);
 
         switch ($file->guessClientExtension()) {

@@ -11,6 +11,7 @@
     <meta name="msapplication-TileColor" content="#2b5797">
     <meta name="theme-color" content="#0079D9">
     <title>{% block title %}File converter{% endblock %}</title>
+
     {% block stylesheets %}
         <link rel="preconnect" href="https://fonts.googleapis.com/" crossorigin>
         <link rel="preload" href="https://fonts.googleapis.com/css?family=Montserrat:500,600" as="style"
@@ -28,34 +29,38 @@
     {% endblock %}
 
     {% block javascript %}
-    {% for js in encore_entry_js_files('js/preload') %}
+        {% for js in encore_entry_js_files('js/preload') %}
            <script src="{{ asset(js) }}" async></script>
-       {% endfor %}
-   {% for upload_validation in encore_entry_js_files('js/upload-validation') %}
-       <script src="{{ asset(upload_validation) }}" async></script>
-   {% endfor %}
-{% endblock %}
+        {% endfor %}
+        {% for upload_validation in encore_entry_js_files('js/upload-validation') %}
+           <script src="{{ asset(upload_validation) }}" async></script>
+        {% endfor %}
+    {% endblock %}
 </head>
 <body>
 <header class="header">
     <div class="container">
         <div class="navigation-wrapper">
             <div class="navigation">
-                <a href="{{ path('index') }}"><img class="navigation__logo"
-                                                   src="{{ asset('../assets/images/icons/logo.svg') }}"></a>
+                <a href="{{ path('index') }}">
+                    <img class="navigation__logo" src="{{ asset('../assets/images/icons/logo.svg') }}">
+                </a>
                 <nav>
                     <ul class="navigation__list">
                         <li class="navigation__item">
                             <a href="https://en.wikipedia.org/wiki/Comma-separated_values" target="_blank"
                                rel="noopener noreferrer" class="navigation__link">About csv</a></li>
-                        <li class="navigation__item"><a href="https://en.wikipedia.org/wiki/Office_Open_XML"
-                                                        target="_blank"
-                                                        rel="noopener noreferrer" class="navigation__link">About
-                                xlsx</a>
+                        <li class="navigation__item">
+                            <a href="https://en.wikipedia.org/wiki/Office_Open_XML" target="_blank"
+                               rel="noopener noreferrer" class="navigation__link">
+                                About xlsx
+                            </a>
                         </li>
-                        <li class="navigation__item"><a href="https://phpspreadsheet.readthedocs.io/en/develop/"
-                                                        target="_blank"
-                                                        rel="noopener noreferrer" class="navigation__link">Library</a>
+                        <li class="navigation__item">
+                            <a href="https://phpspreadsheet.readthedocs.io/en/develop/" target="_blank"
+                               rel="noopener noreferrer" class="navigation__link">
+                                Library
+                            </a>
                         </li>
                     </ul>
                 </nav>

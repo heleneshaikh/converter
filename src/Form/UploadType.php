@@ -28,7 +28,7 @@ class UploadType extends AbstractType
             ->add('xlsx', FileType::class, [
                 'label' => 'xlsx to csv',
                 'required' => false,
-                'attr' => ['class' => 'button__input--xlsx', 'accept' => '.xlsx,' . $xlsxMime . '\''],
+                'attr' => ['class' => 'button__input--xlsx', 'accept' => '.xlsx,' . $xlsxMime],
                 'label_attr' => ['class' => 'button__label'],
                 'constraints' => new File(['mimeTypes' => [$xlsxMime]])
             ])

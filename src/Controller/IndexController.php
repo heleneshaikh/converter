@@ -38,7 +38,9 @@ class IndexController extends AbstractController
                 $convertedFile = $converter->convertFile($file);
 //                $response = new BinaryFileResponse($convertedFile);
 //                $response->deleteFileAfterSend(true);
-                return $this->file($convertedFile);
+                if ($convertedFile !== null) {
+                    return $this->file($convertedFile);
+                }
             }
         }
 
